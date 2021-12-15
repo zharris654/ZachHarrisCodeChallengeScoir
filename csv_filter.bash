@@ -7,7 +7,7 @@
 # 12/15/21
 #
 # The purpose of this program is to parse a CSV file containing a list of first and last names, as well as a date of birth, based
-# on user input
+# on user input. This program must be passed a CSV file as an argument, and the user must follow all prompts.
 #
 
 file=$1
