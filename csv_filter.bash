@@ -17,6 +17,13 @@ read -p "> " filter
 echo -e "\n"
 echo -e "Please enter the the name or birth year you are searching for:\n"
 read -p "> " search
+
+if [[ $filter != "first_name" && $filter != "last_name" && $filter != "birth_year" ]]
+then
+	echo "Invalid input. Please try again!"
+	exit 0
+fi
+
 echo -e "\nFiltering by $filter..."
 echo -e "Searching for all records containing $search...\n"
 
