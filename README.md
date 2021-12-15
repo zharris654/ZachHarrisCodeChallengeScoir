@@ -1,6 +1,6 @@
 # ZachHarrisCodeChallengeScoir
 ## How-To
-This program is a bash script that runs on Bash 5.1.8 and was developed using the VIM 8.2 tool on a Kali Linux 2021.3 machine. To run this program, you must downlaod the file csv_filter.bash and have a version of Bash 5.1.8 or later. This program must be passed a CSV file as an argument (bash csv_filter.bash FILENAME), and after executing the script, the user must follow all prompts. The script will then return a record from the CSV file matching the input made by the user.
+This program is a bash script that runs on Bash 5.1.8 and was developed using the VIM 8.2 tool on a Kali Linux 2021.3 machine. To run this program, you must download the file csv_filter.bash and have a version of Bash 5.1.8 or later. This program must be passed a CSV file as an argument (bash csv_filter.bash FILENAME, or ./csv_filter.bash FILENAME), and after executing the script, the user must follow all prompts. The script will then return a record from the CSV file matching the inputs made by the user.
 
 ## Assumptions
 The assumptions made for this challenge were the following:
