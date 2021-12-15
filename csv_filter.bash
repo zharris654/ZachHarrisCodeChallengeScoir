@@ -12,11 +12,15 @@
 
 file=$1
 
-read -p "Please select an option to filter by: " filter
-read -p "Please enter the name or birth year you are searching for: " search
+echo -e "Please enter a filter to use in the search. Options include:\nfirst_name\nlast_name\nbirth_year\n"
+read -p "> " filter
+echo -e "\n"
+echo -e "Please enter the the name or birth year you are searching for:\n"
+read -p "> " search
 echo -e "\nFiltering by $filter..."
-echo -e "Searching for $search...\n"
+echo -e "Searching for all records containing $search...\n"
 
+result=0
 while read line; do
 	case $filter in
 
@@ -27,6 +31,7 @@ while read line; do
 			if [ $test = $search ]
 			then
 				echo $line
+				result=1
 			fi
 			;;
 		
@@ -37,6 +42,7 @@ while read line; do
 			if [ $test = $search ]
 			then
 				echo $line
+				result=1
 			fi
 			;;
 
@@ -48,7 +54,13 @@ while read line; do
 			if [ $year = $search ]
 			then
 				echo $line
+				result=1
 			fi
 			;;
 		esac
 done < $file
+
+if [ $result == 0 ]
+then
+	echo "No Results"
+fi
