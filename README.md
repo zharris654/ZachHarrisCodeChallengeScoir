@@ -8,3 +8,4 @@ The assumptions made for this challenge were the following:
 2. The records being returned to the user are to be returned in the same format as they are listed in the file (first_name,last_name,dob).
 3. If the user inputs a birth year as part of the filtered search, they only input the year, and not the month or day.
 4. Records for different people in the CSV file can have identical birth years.
+5. When inputting names to search records for, the names are case-sensitive
