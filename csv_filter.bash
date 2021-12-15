@@ -43,9 +43,9 @@ while read line; do
 		birth_year)
 			
 			test=$(echo $line | awk -F"," '{print $3}')
-			year="{test:0:4}"
+			year="${test:0:4}"
 			
-			if [ $test = $search ]
+			if [ $year = $search ]
 			then
 				echo $line
 			fi
