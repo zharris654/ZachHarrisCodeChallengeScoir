@@ -29,28 +29,17 @@ echo -e "Searching for all records containing $search...\n"
 
 result=0
 while read line; do
+	field=0
 	case $filter in
 
 		first_name)
 
-			test=$(echo $line | awk -F"," '{print $1}')
-		
-			if [ $test = $search ]
-			then
-				echo $line
-				result=1
-			fi
+			field=1
 			;;
 		
 		last_name)
 			
-			test=$(echo $line | awk -F"," '{print $2}')
-			
-			if [ $test = $search ]
-			then
-				echo $line
-				result=1
-			fi
+			field=2
 			;;
 
 		birth_year)
@@ -65,6 +54,14 @@ while read line; do
 			fi
 			;;
 		esac
+
+		test=$(echo $line | awk -v temp=$field -F"," '{print $temp}')
+
+			if [ $test = $search ]
+			then
+				echo $line
+				result=1
+			fi
 done < $file
 
 if [ $result == 0 ]
