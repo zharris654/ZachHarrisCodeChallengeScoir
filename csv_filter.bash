@@ -44,24 +44,22 @@ while read line; do
 
 		birth_year)
 			
-			test=$(echo $line | awk -F"," '{print $3}')
-			year="${test:0:4}"
-			
-			if [ $year = $search ]
-			then
-				echo $line
-				result=1
-			fi
+			field=3
 			;;
 		esac
 
 		test=$(echo $line | awk -v temp=$field -F"," '{print $temp}')
+			
+		if [ $filter = "birth_year" ]
+		then
+			test="${test:0:4}"
+		fi
 
-			if [ $test = $search ]
-			then
-				echo $line
-				result=1
-			fi
+		if [ $test = $search ]
+		then
+			echo $line
+			result=1
+		fi
 done < $file
 
 if [ $result == 0 ]
