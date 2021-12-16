@@ -55,7 +55,7 @@ while read line; do
 			test="${test:0:4}"
 		fi
 
-		if [ $test = $search ]
+		if [ ${test,,} = ${search,,} ]
 		then
 			echo $line
 			result=1
